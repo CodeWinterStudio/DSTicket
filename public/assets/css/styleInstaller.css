@@ -1,0 +1,92 @@
+.contenedorPrincipal{
+    border: 1px solid #ddd; padding: 1rem; border-radius: .5rem;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+body { 
+                font-family: 'Open Sans', sans-serif;
+                max-width: 720px; 
+                margin: 2rem auto;
+                background: rgb(255, 255, 255);
+
+}
+h2{
+    color: #11676a;
+}
+
+.ok { color: #0a0; }
+.bad { color: #a00; }
+.box { border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: .5rem; }
+.actions {
+    display: flex;
+    justify-content: center;   /* centra horizontalmente */
+    align-items: center;       /* centra verticalmente */
+    margin-top: 1rem;
+    
+}
+
+
+.btn {
+    background-color: #138a8e ;  /* color de fondo azul */
+    color: white;                /* texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #11676a;   /* azul más oscuro en hover */
+    transform: translateY(-2px); /* efecto "levantar" al pasar el ratón */
+}
+code{
+    background:#1111;
+    padding:.15rem .35rem;
+    border-radius:.25rem}
+.imgInstaller{
+    width: 400px;
+}
+
+
+/* Estilo para el contenedor superior de la cabecera */
+.cabecera {
+    display: flex;               /* Activa el modelo Flexbox para alinear los elementos hijos horizontalmente */
+    justify-content: flex-end;  /* Alinea todos los elementos hijos hacia el lado derecho del contenedor */
+}
+
+/* Estilo para el texto que muestra la versión del sistema */
+.version {
+    font-size: 14px;   /* Define el tamaño de la fuente en 14 píxeles (ligeramente más pequeño que el tamaño por defecto) */
+    color: #666;       /* Asigna un color gris medio al texto (#666 es un tono común y profesional para textos secundarios) */
+}
+p.version span {
+    color: rgb(54, 54, 54);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Asegura que el canvas esté fijo y al fondo */
+html, body {
+    
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -9999;
+    pointer-events: none;
+    display: block;
+}
+
