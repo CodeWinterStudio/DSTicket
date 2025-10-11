@@ -17,9 +17,6 @@ DSTicket es una herramienta de soporte interno basada en código abierto. Esta u
 4. Si todo está correcto, haz clic en **“Comenzar instalación”**
 5. Completa la configuración en `step2.php` (por implementar)
 
-## Créditos
-
-Fondo animado inspirado en el estilo de Ubuntu. Colores y logotipo personalizados para el proyecto DS Ticket.
 
 ## Licencia
 
