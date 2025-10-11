@@ -157,9 +157,9 @@ http://127.0.0.1/dsticket/public/
 
 ## Créditos
 **Autor/a:** CodeWinterStudio ([@shionwinter](https://github.com/shionwinter))  
-**Colaboradores:** —  
+
 **Logo/arte:** Propio.
-Logo basado en “Help Desk Icon” de Jane Doe — CC BY 4.0.
+
 
 ## Licencia
 © 2025 CodeWinterStudio — Licencia **MIT**.  
