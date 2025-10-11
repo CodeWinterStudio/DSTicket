@@ -1,0 +1,55 @@
+CREATE TABLE IF NOT EXISTS {prefix_}users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(190) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  role ENUM('admin','agent') NOT NULL DEFAULT 'admin',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS {prefix_}departments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL UNIQUE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS {prefix_}tickets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  subject VARCHAR(200) NOT NULL,
+  content MEDIUMTEXT NOT NULL,
+  status ENUM('open','in_progress','closed') NOT NULL DEFAULT 'open',
+  department_id INT NULL,
+  requester_email VARCHAR(190) NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_tickets_department
+    FOREIGN KEY (department_id) REFERENCES {prefix_}departments(id)
+    ON UPDATE CASCADE ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS {prefix_}comments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ticket_id INT NOT NULL,
+  author_id INT NULL,
+  body MEDIUMTEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_comments_ticket
+    FOREIGN KEY (ticket_id) REFERENCES {prefix_}tickets(id)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_comments_author
+    FOREIGN KEY (author_id) REFERENCES {prefix_}users(id)
+    ON UPDATE CASCADE ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Opcional: adjuntos
+CREATE TABLE IF NOT EXISTS {prefix_}attachments (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ticket_id INT NOT NULL,
+  filename VARCHAR(255) NOT NULL,
+  mime VARCHAR(150) NOT NULL,
+  size_bytes INT NOT NULL,
+  stored_path VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_attachments_ticket
+    FOREIGN KEY (ticket_id) REFERENCES {prefix_}tickets(id)
+    ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
