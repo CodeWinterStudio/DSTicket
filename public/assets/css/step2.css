@@ -1,0 +1,55 @@
+    /* styleStep2.css — extensión ligera para el formulario del paso 2 */
+
+    /* Formulario */
+    form { margin-top: .5rem; }
+    label { display:block; font-size:14px; color:#333; margin-bottom:.35rem; }
+
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"]{
+    width:300px;
+    padding:10px 12px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    background:#fff;
+    color:#222;
+    outline:none;
+
+    }
+
+    input:focus{
+    border-color:#138a8e;
+    box-shadow:0 0 0 2px rgba(19,138,142,.15);
+    }
+
+    .hint{ font-size:12px; color:#666; margin-top:.35rem; }
+
+
+.inpC{
+    width:300px;
+    padding:10px 12px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    background:#fff;
+    color:#222;
+    outline:none; 
+}
+
+
+    /* Caja de errores en sintonía con tu index */
+    .errors{
+    background:#ffe9eb;
+    border:1px solid #d66;
+    color:#7a1c1c;
+    padding:10px 12px;
+    border-radius:6px;
+    margin-bottom:12px;
+    }
+    .errors ul{ 
+        margin:.25rem 0 0; 
+        padding-left:18px; 
+    }
+
+

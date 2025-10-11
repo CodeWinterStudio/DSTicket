@@ -1,0 +1,15 @@
+# Sensibles / generados por el instalador
+/app/config.php
+/app/install_state.json
+
+# Dependencias o cachés comunes (por si acaso)
+/vendor/
+/node_modules/
+/composer.lock
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
