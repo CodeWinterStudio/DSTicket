@@ -65,19 +65,7 @@ app/config.php
 app/install_state.json
 app/INSTALL_OK
 
-Estructura del proyecto (resumen)
-dsticket/
-├─ app/
-│  ├─ lib/helpers.php
-│  ├─ views/install/step2.view.php
-│  ├─ views/install/step3.view.php
-│  └─ sql/                # (opcional) migraciones .sql con {prefix_}
-└─ public/
-   ├─ assets/             # css, js, imágenes (incluye animación de fondo)
-   └─ install/
-      ├─ index.php        # Paso 1 (requisitos)
-      ├─ step2.php        # Paso 2 (configuración)
-      └─ step3.php        # Paso 3 (migraciones/final)
+<img width="558" height="288" alt="image" src="https://github.com/user-attachments/assets/57ce8a59-91f0-4c5d-af4d-13c62c8b256c" />
 
 Reinstalar (limpio) si falla o quieres rehacer
 
