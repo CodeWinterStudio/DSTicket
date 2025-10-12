@@ -13,12 +13,28 @@
 <body>
   <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-  <div class="contenedorPrincipal">
-    <div class="cabecera">
-      <p class="version"><span>Instalando DSTicket v1.0-beta</span></p>
-    </div>
+  <div class="contenedorPrincipal"><!--contenedor principal-->
+      <div class="cabecera">
+                    <p class="version"><span>Instalando DSTicket v1.0-beta</span></p>
 
-    <img src="/dsticket/public/assets/logo/logoDSTicket.png" alt="Logo DSTICKET" class="imgInstaller">
+                <div class="contacto">
+                    <span class="version">Guía de instalación · </span><!--Pendiente-->
+                    <span class="version contacto-trigger" tabindex="0">
+                        <strong>Contacta con nosotros</strong>
+                    </span>
+
+                    <!-- Dropdown que se muestra solo al hover/focus del trigger -->
+                    <div class="contacto-dropdown" role="dialog" aria-label="Contacto Winter Code Studio">
+                        <img class="contacto-img"
+                            src="/dsticket/public/assets/logo/logowintercodestudiosin.png"
+                            alt="Winter Code Studio">
+                    </div>
+                </div>
+            </div>
+
+    <div><!--div del logo dsTicket-->
+                <img src="/dsticket/public/assets/logo/logoDSTicket.png" alt="Logo DSTICKET" class="imgInstaller">
+    </div>
 
     <h2>Configuración inicial</h2>
     <p>Introduce los datos del sistema, del usuario administrador y de la base de datos para continuar.</p>

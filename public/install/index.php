@@ -40,18 +40,38 @@ $all_ok = !in_array(false,$checks,true);
     <body>
         <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
-        <div class="contenedorPrincipal"><!--contenedor principal-->
-                <div class="cabecera">
+    <div class="contenedorPrincipal"><!--contenedor principal-->
+            <div class="cabecera">
                     <p class="version"><span>Instalando DSTicket v1.0-beta</span></p>
+
+                <div class="contacto">
+                    <span class="version">Guía de instalación · </span>
+                    <span class="version contacto-trigger" tabindex="0">
+                        <strong>Contacta con nosotros</strong>
+                    </span>
+
+                    <!-- Dropdown que se muestra solo al hover/focus del trigger -->
+                    <div class="contacto-dropdown" role="dialog" aria-label="Contacto Winter Code Studio">
+                        <img class="contacto-img"
+                            src="/dsticket/public/assets/logo/logowintercodestudiosin.png"
+                            alt="Winter Code Studio">
+                    </div>
                 </div>
-            <img src="/dsticket/public/assets/logo/logoDSTicket.png" alt="Logo DSTICKET" class="imgInstaller">
-            <div >
+            </div>
+
+            <div><!--div del logo dsTicket-->
+                <img src="/dsticket/public/assets/logo/logoDSTicket.png" alt="Logo DSTICKET" class="imgInstaller">
+            </div>
+            
+            <div class="intro">
+
                 <h2>Gracias por elegir DS Ticket!</h2>
                 <p>DSTicket, es  una herramienta de soporte en desarrollo basada en código abierto diseñada para organizar y dar seguimiento a incidencias,
                     tareas internas y flujos de comunicación entre equipos de trabajo.</p>
                 <p>Esta versión beta le guiará paso a paso en la configuración inicial del sistema.
                 Tenga en cuenta que aún puede contener funciones en prueba o pendientes de mejora.</p>
             </div>
+
             <div class="box">
                 <h2>Requisitos</h2>
                 <p>Antes de comenzar, verificaremos la configuración de su servidor para asegurarnos de
@@ -141,8 +161,11 @@ function animate() {
 animate();
 </script>
 
-        
-                    
+        <footer>
+        <p class="pfoot">© 2025 DSTicket — desarrollado por <strong>Winter Code Studio</strong>.</p>
+        </footer>
+                            
     </body>
     
+
 </html>

@@ -56,14 +56,19 @@ code{
 
 /* Estilo para el contenedor superior de la cabecera */
 .cabecera {
+    align-items: flex-end;
+    flex-direction: column;   /* ← apila vertical */
     display: flex;               /* Activa el modelo Flexbox para alinear los elementos hijos horizontalmente */
     justify-content: flex-end;  /* Alinea todos los elementos hijos hacia el lado derecho del contenedor */
 }
-
+.cabecera .version { margin: 0; }  /* elimina espacios verticales extra */
 /* Estilo para el texto que muestra la versión del sistema */
 .version {
+    
+    
     font-size: 14px;   /* Define el tamaño de la fuente en 14 píxeles (ligeramente más pequeño que el tamaño por defecto) */
     color: #666;       /* Asigna un color gris medio al texto (#666 es un tono común y profesional para textos secundarios) */
+    
 }
 p.version span {
     color: rgb(54, 54, 54);
@@ -90,3 +95,65 @@ html, body {
     display: block;
 }
 
+
+
+p.pfoot{
+    text-align: center;
+
+}
+
+
+/* Línea de contacto: texto + trigger, alineado a la derecha dentro de .cabecera */
+.contacto{
+position: relative;
+display: flex;
+align-items: center;
+gap: 6px;
+  align-self: flex-end;   /* mantiene a la derecha con tu cabecera en columna */
+}
+
+/* Solo el trigger es interactivo */
+.contacto-trigger{
+cursor: pointer;
+text-decoration: underline;
+text-underline-offset: 2px;
+  outline: none;                   /* quitamos outline por defecto */
+}
+.contacto-trigger:focus-visible{
+  outline: 2px solid #3ddbe1;      /* accesible al tabular */
+outline-offset: 2px;
+}
+
+/* Dropdown oculto por defecto */
+.contacto-dropdown{
+position: absolute;
+top: calc(100% + 8px);
+right: 0;
+background: #fff;
+border: 1px solid #e5e7eb;
+box-shadow: 0 8px 24px rgba(0,0,0,.12);
+border-radius: 10px;
+padding: 10px;
+z-index: 10;
+
+opacity: 0;
+transform: translateY(-4px) scale(.98);
+pointer-events: none;
+transition: opacity .18s ease, transform .18s ease;
+}
+
+/* Mostrar SOLO cuando el trigger tiene hover o foco */
+.contacto-trigger:hover + .contacto-dropdown,
+.contacto-trigger:focus + .contacto-dropdown,
+.contacto-trigger:focus-visible + .contacto-dropdown{
+opacity: 1;
+transform: translateY(0) scale(1);
+pointer-events: auto;
+}
+
+/* Imagen del panel */
+.contacto-img{
+width: 200px;
+height: auto;
+display: block;
+}
